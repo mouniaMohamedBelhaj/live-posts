@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-6">
+    <h3 *ngIf="!editMode">Add Post</h3>
+    <h3 *ngIf="editMode">Edit Post</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter title"
+          id="title"
+          formControlName="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="descr">Description</label>
+        <textarea
+          type="password"
+          class="form-control"
+          id="descr"
+          placeholder="Enter description"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="imagePath">Image Path</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter image path 1"
+          id="imagePath1"
+          formControlName="imagePath1"
+        />
+        <img src="{{ form.value.imagePath1 }}" class="img-responsive" />
+        <br />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter image path 2"
+          id="imagePath2"
+          formControlName="imagePath2"
+        /><br />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter image path 3"
+          id="imagePath3"
+          formControlName="imagePath3"
+        />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-success" [disabled]="form.invalid">
+          Save
+        </button>
+        |
+        <button type="reset" class="btn btn-primary">Clear</button>
+      </div>
+    </form>
+  </div>
+</div>
