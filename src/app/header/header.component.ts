@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   }
 
   onSave() {
-    //console.log('OnSave called!!!');
     this.backendService.saveData();
   }
 

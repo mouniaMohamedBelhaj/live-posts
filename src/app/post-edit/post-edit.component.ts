@@ -49,9 +49,11 @@ export class PostEditComponent implements OnInit {
       imagePath2: new FormControl(imagePath2),
       imagePath3: new FormControl(imagePath3),
     });
+
   }
 
   onSubmit() {
+    
     const title = this.form.value.title;
     const description = this.form.value.description;
     const imagePath1 = this.form.value.imagePath1;
@@ -69,6 +71,7 @@ export class PostEditComponent implements OnInit {
       new Date(),
       0      
     );
+    
     //calling Service
     if (!this.editMode) {
       this.postService.addPost(post);
